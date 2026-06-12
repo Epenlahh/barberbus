@@ -1,0 +1,611 @@
+/* =============================================
+   BARBERBUS – USER DASHBOARD STYLES
+   ============================================= */
+
+:root {
+    --user-bg: #0a0a0a;
+    --card-bg: #151515;
+    --card-border: #222;
+    --text-muted: #888;
+}
+
+.user-dashboard-body {
+    background-color: var(--user-bg);
+    color: #fff;
+    padding-top: 80px; /* Offset for fixed navbar */
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+    margin-bottom: 3rem;
+}
+
+.welcome-section h1 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.welcome-section p {
+    color: var(--text-muted);
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(201, 168, 76, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.stat-info h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+.stat-info .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.action-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.action-card i {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.action-card span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.action-card:hover {
+    background: var(--gold);
+    color: #000;
+}
+
+.action-card:hover i {
+    color: #000;
+}
+
+/* Booking Status Table */
+.dashboard-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-section-header h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+}
+
+.btn-text {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.bookings-table-container {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.bookings-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table th, .bookings-table td {
+    padding: 1.2rem;
+    text-align: left;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.bookings-table th {
+    background: rgba(255,255,255,0.02);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-pending { background: rgba(255, 193, 7, 0.1); color: #ffc107; }
+.status-confirmed { background: rgba(40, 167, 69, 0.1); color: #28a745; }
+.status-completed { background: rgba(0, 123, 255, 0.1); color: #007bff; }
+.status-cancelled { background: rgba(220, 53, 69, 0.1); color: #dc3545; }
+
+/* User Navbar Specifics */
+.user-navbar .user-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.user-navbar .user-menu:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #000;
+}
+
+.user-name-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.form-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    padding: 2rem;
+    box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+}
+
+.summary-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.select-card {
+    position: relative;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    background: var(--user-bg);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.select-card:hover {
+    border-color: rgba(201,168,76,0.4);
+}
+
+.select-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.select-card strong {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.select-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.select-card input[type="radio"]:checked + div,
+.select-card input[type="radio"]:checked ~ div {
+    border-color: var(--gold);
+}
+
+.section-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 2rem 0;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.alert {
+    background: rgba(192, 57, 43, 0.12);
+    border: 1px solid rgba(192, 57, 43, 0.3);
+    color: #f5c6cb;
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.alert.alert-error strong {
+    color: #f5c6cb;
+}
+
+.radio-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-right: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+    background: var(--card-bg);
+}
+
+.radio-inline:hover {
+    border-color: rgba(201,168,76,0.4);
+}
+
+.radio-inline input {
+    margin: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+}
+
+.form-group label {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #ccc;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem 1.15rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+    color: #fff;
+    font-size: 0.95rem;
+    transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255,255,255,0.08);
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%), linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.15));
+    background-position: calc(100% - 1rem) center, calc(100% - 0.7rem) center, center;
+    background-size: 0.45rem 0.45rem, 0.45rem 0.45rem, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.select-card {
+    position: relative;
+    display: block;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    background: rgba(255,255,255,0.03);
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+    cursor: pointer;
+}
+
+.select-card:hover {
+    border-color: rgba(201,168,76,0.4);
+    transform: translateY(-1px);
+}
+
+.select-card strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.select-card p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.select-card input[type="radio"]:checked + div,
+.select-card input[type="radio"]:checked ~ div {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+}
+
+.page-container form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.user-chevron {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+}
+
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.dropdown-header {
+    padding: 1.2rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.dropdown-header strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.dropdown-header small {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.user-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.user-dropdown a:hover {
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--gold);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: var(--card-border);
+}
+
+.logout-link {
+    color: #dc3545 !important;
+}
+
+.logout-link:hover {
+    background: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* My Bookings Page */
+.bookings-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.booking-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-main-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.booking-date-badge {
+    background: rgba(255,255,255,0.05);
+    padding: 0.8rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.booking-date-badge .day {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.booking-date-badge .month {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.booking-details h3 {
+    margin-bottom: 0.3rem;
+}
+
+.booking-meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.booking-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* Try-On Page Iframe */
+.tryon-iframe-container {
+    width: 100%;
+    height: calc(100vh - 80px);
+    border: none;
+    overflow: hidden;
+}
+
+.tryon-iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Barbers Page in User Area */
+.barber-profession {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .booking-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .booking-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

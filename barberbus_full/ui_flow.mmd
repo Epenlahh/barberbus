@@ -1,0 +1,49 @@
+flowchart TD
+  Public[Public Landing / Booking Page]
+  Login[Login / Authentication]
+  AuthAPI[/api/auth.php/]
+  UserDashboard[User Dashboard]
+  OfficerDashboard[Officer Dashboard]
+  AdminDashboard[Admin Dashboard]
+  BookingForm[Booking Form]
+  Payment[Payment / Confirm Booking]
+  UserBookings[My Bookings]
+  Services[Services List]
+  UserAccounts[User Accounts]
+  BookingAPI[/api/bookings.php/]
+  UsersAPI[/api/users.php/]
+  ServicesAPI[/api/services.php/]
+  AuthCheck[Auth / Role Guard]
+
+  Public --> Login
+  Login --> AuthAPI
+  AuthAPI -->|user role| UserDashboard
+  AuthAPI -->|officer role| OfficerDashboard
+  AuthAPI -->|admin role| AdminDashboard
+
+  UserDashboard --> BookingForm
+  UserDashboard --> UserBookings
+  UserDashboard --> Services
+  BookingForm --> Payment
+  Payment --> BookingAPI
+
+  OfficerDashboard --> Services
+  OfficerDashboard --> UserAccounts
+  OfficerDashboard --> BookingAPI
+
+  AdminDashboard --> Services
+  AdminDashboard --> UserAccounts
+  AdminDashboard --> BookingAPI
+
+  UserAccounts --> UsersAPI
+  Services --> ServicesAPI
+
+  Login --> AuthCheck
+  UserDashboard --> AuthCheck
+  OfficerDashboard --> AuthCheck
+  AdminDashboard --> AuthCheck
+
+  classDef api fill:#f9f,stroke:#333,stroke-width:1px;
+  class AuthAPI,BookingAPI,UsersAPI,ServicesAPI api;
+  classDef dashboard fill:#bbf,stroke:#333,stroke-width:1px;
+  class UserDashboard,OfficerDashboard,AdminDashboard dashboard;
