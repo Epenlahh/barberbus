@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BarberBus – Book Appointment</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">✂</span>
+      <span class="logo-text">BARBER<span class="accent">BUS</span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="barbers.html">Our Barbers</a></li>
+      <li><a href="fashion.html">Fashion Cuts</a></li>
+      <li><a href="booking.html" class="active">Book Now</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="login.html" class="btn-login">Login</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="section-label">Reserve Your Spot</p>
+      <h1>Book Appointment</h1>
+      <p>Pick your barber, service, date and time in under 2 minutes.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING + PAYMENT -->
+  <section class="booking-section">
+
+    <!-- STEPS INDICATOR -->
+    <div class="booking-steps">
+      <div class="step active" id="step-indicator-1">
+        <div class="step-circle">1</div>
+        <span>Details</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step-indicator-2">
+        <div class="step-circle">2</div>
+        <span>Schedule</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step-indicator-3">
+        <div class="step-circle">3</div>
+        <span>Payment</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" id="step-indicator-4">
+        <div class="step-circle">4</div>
+        <span>Confirm</span>
+      </div>
+    </div>
+
+    <div class="booking-layout">
+
+      <!-- FORM STEPS -->
+      <div class="booking-form-area">
+
+        <!-- STEP 1: Personal Info + Service -->
+        <div class="booking-step active" id="step1">
+          <h3><span class="step-num">01</span> Your Details & Service</h3>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="clientName" placeholder="Ahmad bin Ali" required/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="clientPhone" placeholder="+60 12-345 6789" required/>
+            </div>
+            <div class="form-group full-width">
+              <label>Email Address *</label>
+              <input type="email" id="clientEmail" placeholder="your@email.com" required/>
+            </div>
+          </div>
+
+          <h4 style="margin:2rem 0 1rem;">Choose Service</h4>
+          <div class="service-select-grid" id="serviceSelectGrid">
+            <div class="service-select-card selected" data-service="Classic Haircut" data-price="25" data-duration="30">
+              <i class="fas fa-cut"></i>
+              <span>Classic Cut</span>
+              <strong>RM 20</strong>
+            </div>
+            <div class="service-select-card" data-service="Skin Fade" data-price="35" data-duration="45">
+              <i class="fas fa-magic"></i>
+              <span>Skin Fade</span>
+              <strong>RM 25</strong>
+            </div>
+            <div class="service-select-card" data-service="Taper Fade" data-price="35" data-duration="40">
+              <i class="fas fa-star"></i>
+              <span>Taper Fade</span>
+              <strong>RM 25</strong>
+            </div>
+            <div class="service-select-card" data-service="Undercut" data-price="40" data-duration="45">
+              <i class="fas fa-crown"></i>
+              <span>Undercut</span>
+              <strong>RM 23</strong>
+            </div>
+            <div class="service-select-card" data-service="Beard Trim" data-price="20" data-duration="20">
+              <span>🧔</span>
+              <span>Beard Trim</span>
+              <strong>RM 15</strong>
+            </div>
+            <div class="service-select-card" data-service="Hot Shave" data-price="30" data-duration="30">
+              <i class="fas fa-fire"></i>
+              <span>Hot Shave</span>
+              <strong>RM 30</strong>
+            </div>
+            <div class="service-select-card" data-service="Full Package" data-price="80" data-duration="90">
+              <i class="fas fa-gem"></i>
+              <span>Full Package</span>
+              <strong>RM 80</strong>
+            </div>
+            <div class="service-select-card" data-service="Cut + Beard" data-price="50" data-duration="60">
+              <i class="fas fa-star-half-alt"></i>
+              <span>Cut + Beard</span>
+              <strong>RM 25</strong>
+            </div>
+          </div>
+
+          <h4 style="margin:2rem 0 1rem;">Choose Barber</h4>
+          <div class="barber-select-grid" id="barberSelectGrid">
+            <div class="barber-select-card selected" data-barber="Any Available">
+              <div class="bsc-avatar" style="background:#c9a84c;">★</div>
+              <span>Any Available</span>
+            </div>
+            <div class="barber-select-card" data-barber="Aariz Ahmad">
+              <div class="bsc-avatar" style="background:linear-gradient(135deg,#c9a84c,#8a5c0a);">AA</div>
+              <span>Harith</span>
+            </div>
+            <div class="barber-select-card" data-barber="Remy Syafiq">
+              <div class="bsc-avatar" style="background:linear-gradient(135deg,#1a1a2e,#c9a84c);">RS</div>
+              <span>Arash</span>
+            </div>
+            <div class="barber-select-card" data-barber="Daniel Lim">
+              <div class="bsc-avatar" style="background:linear-gradient(135deg,#2d5016,#6aaa2e);">DL</div>
+              <span>Arif</span>
+            </div>
+            <div class="barber-select-card" data-barber="Azri Kamal">
+              <div class="bsc-avatar" style="background:linear-gradient(135deg,#1a1a40,#8a2be2);">AK</div>
+              <span>Shahrul</span>
+            </div>
+            <div class="barber-select-card" data-barber="Fariz Hakim">
+              <div class="bsc-avatar" style="background:linear-gradient(135deg,#5a0000,#c9a84c);">FH</div>
+              <span>Ahmad</span>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:1.5rem;">
+            <label>Special Requests (optional)</label>
+            <textarea id="notes" rows="3" placeholder="Any specific style, references, or notes for your barber..."></textarea>
+          </div>
+
+          <button class="btn-primary full" onclick="nextStep(2)">Next: Choose Time →</button>
+        </div>
+
+        <!-- STEP 2: Date & Time -->
+        <div class="booking-step" id="step2">
+          <h3><span class="step-num">02</span> Pick a Date & Time</h3>
+          <div class="calendar-section">
+            <div class="calendar-header">
+              <button onclick="changeMonth(-1)" class="cal-nav">‹</button>
+              <h4 id="calMonthYear"></h4>
+              <button onclick="changeMonth(1)" class="cal-nav">›</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
+
+          <div class="time-slots" id="timeSlots">
+            <h4>Available Times</h4>
+            <div class="slots-grid" id="slotsGrid"></div>
+          </div>
+
+          <div class="step-btns">
+            <button class="btn-outline" onclick="nextStep(1)">← Back</button>
+            <button class="btn-primary" onclick="nextStep(3)">Next: Payment →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Payment -->
+        <div class="booking-step" id="step3">
+          <h3><span class="step-num">03</span> Payment</h3>
+
+          <div class="payment-methods">
+            <h4>Select Payment Method</h4>
+            <div class="payment-grid">
+              <div class="payment-card selected" data-pay="online_banking">
+                <i class="fas fa-university"></i>
+                <span>Online Banking</span>
+              </div>
+              <div class="payment-card" data-pay="ewallet">
+                <i class="fas fa-mobile-alt"></i>
+                <span>e-Wallet</span>
+              </div>
+              <div class="payment-card" data-pay="card">
+                <i class="fas fa-credit-card"></i>
+                <span>Credit/Debit</span>
+              </div>
+              <div class="payment-card" data-pay="cash">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Pay at Shop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ONLINE BANKING PANEL -->
+          <div class="pay-panel active" id="panel-online_banking">
+            <h4>Select Your Bank</h4>
+            <div class="bank-grid">
+              <div class="bank-btn selected" data-bank="Maybank">🏦 Maybank</div>
+              <div class="bank-btn" data-bank="CIMB">🏦 CIMB</div>
+              <div class="bank-btn" data-bank="Public Bank">🏦 Public Bank</div>
+              <div class="bank-btn" data-bank="RHB">🏦 RHB</div>
+              <div class="bank-btn" data-bank="Hong Leong">🏦 Hong Leong</div>
+              <div class="bank-btn" data-bank="AmBank">🏦 AmBank</div>
+            </div>
+            <p class="pay-note">You will be redirected to your bank's secure payment portal.</p>
+          </div>
+
+          <!-- E-WALLET PANEL -->
+          <div class="pay-panel" id="panel-ewallet">
+            <h4>Select e-Wallet</h4>
+            <div class="bank-grid">
+              <div class="bank-btn selected" data-ew="Touch 'n Go">💳 Touch 'n Go</div>
+              <div class="bank-btn" data-ew="GrabPay">💳 GrabPay</div>
+              <div class="bank-btn" data-ew="Boost">💳 Boost</div>
+              <div class="bank-btn" data-ew="ShopeePay">💳 ShopeePay</div>
+            </div>
+            <p class="pay-note">You will be redirected to your e-wallet app to complete payment.</p>
+          </div>
+
+          <!-- CARD PANEL -->
+          <div class="pay-panel" id="panel-card">
+            <h4>Card Details</h4>
+            <div class="card-form">
+              <div class="form-group">
+                <label>Cardholder Name</label>
+                <input type="text" id="cardName" placeholder="AHMAD BIN ALI"/>
+              </div>
+              <div class="form-group">
+                <label>Card Number</label>
+                <div class="input-wrap">
+                  <i class="fas fa-credit-card"></i>
+                  <input type="text" id="cardNum" placeholder="1234 5678 9012 3456" maxlength="19" oninput="formatCard(this)"/>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry Date</label>
+                  <input type="text" id="cardExp" placeholder="MM/YY" maxlength="5" oninput="formatExpiry(this)"/>
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="password" id="cardCVV" placeholder="•••" maxlength="3"/>
+                </div>
+              </div>
+              <div class="card-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/200px-Mastercard-logo.svg.png" alt="Mastercard" height="24"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" height="24"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASH PANEL -->
+          <div class="pay-panel" id="panel-cash">
+            <div class="cash-info">
+              <i class="fas fa-store" style="font-size:3rem;color:var(--gold);margin-bottom:1rem;"></i>
+              <h4>Pay at the Shop</h4>
+              <p>Your appointment will be reserved. Please arrive on time and pay at the counter.</p>
+              <p>We accept <strong>cash</strong> and <strong>DuitNow QR</strong> at the shop.</p>
+            </div>
+          </div>
+
+          <div class="step-btns">
+            <button class="btn-outline" onclick="nextStep(2)">← Back</button>
+            <button class="btn-primary" onclick="nextStep(4)">Confirm Booking →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Confirmation -->
+        <div class="booking-step" id="step4">
+          <div class="confirm-box">
+            <div class="confirm-icon">✓</div>
+            <h3>Booking Confirmed!</h3>
+            <p>Your appointment has been successfully booked. A confirmation will be sent to your email.</p>
+
+            <div class="confirm-summary" id="confirmSummary"></div>
+
+            <div class="confirm-ref">
+              Booking Ref: <strong id="bookingRef"></strong>
+            </div>
+
+            <div class="confirm-btns">
+              <a href="index.html" class="btn-outline">Back to Home</a>
+              <button onclick="window.print()" class="btn-primary">Print Receipt</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOOKING SUMMARY SIDEBAR -->
+      <div class="booking-summary" id="bookingSummary">
+        <h4>Booking Summary</h4>
+        <div class="summary-item">
+          <span>Service</span>
+          <strong id="sum-service">Classic Haircut</strong>
+        </div>
+        <div class="summary-item">
+          <span>Barber</span>
+          <strong id="sum-barber">Any Available</strong>
+        </div>
+        <div class="summary-item">
+          <span>Date</span>
+          <strong id="sum-date">Not selected</strong>
+        </div>
+        <div class="summary-item">
+          <span>Time</span>
+          <strong id="sum-time">Not selected</strong>
+        </div>
+        <div class="summary-item">
+          <span>Duration</span>
+          <strong id="sum-duration">30 min</strong>
+        </div>
+        <div class="summary-divider"></div>
+        <div class="summary-item total">
+          <span>Total</span>
+          <strong id="sum-total">RM 25</strong>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">BARBER<span class="accent">BUS</span></span>
+        <p>Premium grooming for the modern gentleman.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="barbers.html">Barbers</a></li>
+          <li><a href="fashion.html">Fashion Cuts</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-map-marker-alt"></i> BARBER BUS UPSI, Kampus Sultan Abdul Jalil shah, 35900, Tanjong malim,perak</p>
+        <p><i class="fas fa-phone"></i> +60 132663528</p>
+        <p><i class="fas fa-clock"></i> Mon–Sat: 2.00PM – 10.00PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 BarberBus. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

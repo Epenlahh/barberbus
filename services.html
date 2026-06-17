@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BarberBus – Services</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">✂</span>
+      <span class="logo-text">BARBER<span class="accent">BUS</span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="barbers.html">Our Barbers</a></li>
+      <li><a href="fashion.html">Fashion Cuts</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="login.html" class="btn-login">Login</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="section-label">What We Offer</p>
+      <h1>Our Services</h1>
+      <p>Every cut is crafted with precision and care.</p>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="services-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="cut">Cuts</button>
+      <button class="filter-btn" data-filter="beard">Beard</button>
+      <button class="filter-btn" data-filter="treatment">Treatment</button>
+      <button class="filter-btn" data-filter="package">Packages</button>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+
+      <div class="service-card" data-cat="cut">
+        <div class="service-icon"><i class="fas fa-cut"></i></div>
+        <div class="service-info">
+          <h3>Classic Haircut</h3>
+          <p>A timeless scissor cut with precise styling. Includes wash and blow-dry.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 30 min</span>
+            <span class="price">RM 20</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="cut">
+        <div class="service-icon"><i class="fas fa-magic"></i></div>
+        <div class="service-info">
+          <h3>Skin Fade</h3>
+          <p>Precision skin-to-zero fade. Our most popular service.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
+            <span class="price">RM 25</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="cut">
+        <div class="service-icon"><i class="fas fa-star"></i></div>
+        <div class="service-info">
+          <h3>Taper Fade</h3>
+          <p>Gradual taper from natural to skin. Clean and modern finish.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 40 min</span>
+            <span class="price">RM 25</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="cut">
+        <div class="service-icon"><i class="fas fa-crown"></i></div>
+        <div class="service-info">
+          <h3>Undercut</h3>
+          <p>Bold disconnected undercut with styled top. Sharp and edgy.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
+            <span class="price">RM 23</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="beard">
+        <div class="service-icon">🧔</div>
+        <div class="service-info">
+          <h3>Beard Trim</h3>
+          <p>Shape and trim your beard to perfection with hot towel finish.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 20 min</span>
+            <span class="price">RM 15</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="beard">
+        <div class="service-icon"><i class="fas fa-fire"></i></div>
+        <div class="service-info">
+          <h3>Hot Shave</h3>
+          <p>Traditional straight-razor shave with hot towel and premium foam.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 30 min</span>
+            <span class="price">RM 30</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="beard">
+        <div class="service-icon"><i class="fas fa-leaf"></i></div>
+        <div class="service-info">
+          <h3>Beard Design</h3>
+          <p>Custom beard shaping and line-up design for a sharp look.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 25 min</span>
+            <span class="price">RM 25</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="treatment">
+        <div class="service-icon"><i class="fas fa-spa"></i></div>
+        <div class="service-info">
+          <h3>Scalp Treatment</h3>
+          <p>Deep cleanse and nourishing scalp massage treatment.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 30 min</span>
+            <span class="price">RM 40</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="treatment">
+        <div class="service-icon"><i class="fas fa-tint"></i></div>
+        <div class="service-info">
+          <h3>Hair Colour</h3>
+          <p>Natural or fashion colour application with professional products.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 60 min</span>
+            <span class="price">From RM 60</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card featured" data-cat="package">
+        <div class="badge">Best Value</div>
+        <div class="service-icon"><i class="fas fa-gem"></i></div>
+        <div class="service-info">
+          <h3>The Full Package</h3>
+          <p>Haircut + Beard Trim + Scalp Massage + Hot Towel. The full experience.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 90 min</span>
+            <span class="price">RM 80</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+      <div class="service-card" data-cat="package">
+        <div class="service-icon"><i class="fas fa-star-half-alt"></i></div>
+        <div class="service-info">
+          <h3>Cut + Beard Combo</h3>
+          <p>Haircut and beard trim in one session at a discounted rate.</p>
+          <div class="service-meta">
+            <span class="duration"><i class="fas fa-clock"></i> 60 min</span>
+            <span class="price">RM 50</span>
+          </div>
+        </div>
+        <a href="booking.html" class="btn-small">Book</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text">BARBER<span class="accent">BUS</span></span>
+        <p>Premium grooming for the modern gentleman.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="barbers.html">Barbers</a></li>
+          <li><a href="fashion.html">Fashion Cuts</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-map-marker-alt"></i> BARBER BUS UPSI, Kampus Sultan Abdul Jalil shah, 35900, Tanjong malim,perak</p>
+        <p><i class="fas fa-phone"></i> +60 132663528</p>
+        <p><i class="fas fa-clock"></i> Mon–Sat: 2.00PM – 10.00PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2024 BarberBus. All rights reserved.</p></div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>

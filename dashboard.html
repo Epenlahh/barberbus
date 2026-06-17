@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BarberBus Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/admin.css"/>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-mark">✂</span>
+      <div>
+        <div class="logo-text">BARBER<span>BUS</span></div>
+        <div class="logo-sub">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-group">
+        <span class="nav-label">Main</span>
+        <a href="index.html" class="nav-item active" data-page="dashboard">
+          <i class="fas fa-th-large"></i> Dashboard
+        </a>
+        <a href="bookings.html" class="nav-item" data-page="bookings">
+          <i class="fas fa-calendar-check"></i> Bookings
+          <span class="nav-badge" id="pendingBadge">3</span>
+        </a>
+        <a href="barbers.html" class="nav-item" data-page="barbers">
+          <i class="fas fa-cut"></i> Barbers
+        </a>
+        <a href="services.html" class="nav-item" data-page="services">
+          <i class="fas fa-list-ul"></i> Services
+        </a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">Reports</span>
+        <a href="revenue.html" class="nav-item" data-page="revenue">
+          <i class="fas fa-chart-line"></i> Revenue
+        </a>
+        <a href="clients.html" class="nav-item" data-page="clients">
+          <i class="fas fa-users"></i> Clients
+        </a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-label">System</span>
+        <a href="settings.html" class="nav-item" data-page="settings">
+          <i class="fas fa-cog"></i> Settings
+        </a>
+        <a href="../login.html" class="nav-item logout">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </a>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="admin-avatar">AA</div>
+      <div class="admin-info">
+        <div class="admin-name">Aariz Ahmad</div>
+        <div class="admin-role">Head Barber · Admin</div>
+      </div>
+      <i class="fas fa-ellipsis-v" style="color:var(--gray);cursor:pointer"></i>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" id="menuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="page-title">
+          <h1>Dashboard</h1>
+          <span id="liveClock"></span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" placeholder="Search bookings, clients..."/>
+        </div>
+        <button class="icon-btn" id="notifBtn">
+          <i class="fas fa-bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+        <button class="btn-new" onclick="window.location.href='bookings.html?new=1'">
+          <i class="fas fa-plus"></i> New Booking
+        </button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD BODY -->
+    <div class="content-body">
+
+      <!-- ALERT BANNER -->
+      <div class="alert-banner" id="alertBanner">
+        <i class="fas fa-clock"></i>
+        <span>You have <strong>3 pending bookings</strong> that need confirmation.</span>
+        <a href="bookings.html?filter=pending">Review Now →</a>
+        <button onclick="document.getElementById('alertBanner').style.display='none'"><i class="fas fa-times"></i></button>
+      </div>
+
+      <!-- STAT CARDS -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon blue"><i class="fas fa-calendar-check"></i></div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 12%</div>
+          </div>
+          <div class="stat-value" data-count="24">0</div>
+          <div class="stat-label">Today's Bookings</div>
+          <div class="stat-bar"><div class="stat-bar-fill" style="width:80%"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon gold"><i class="fas fa-dollar-sign"></i></div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 8%</div>
+          </div>
+          <div class="stat-value">RM <span data-count="1240">0</span></div>
+          <div class="stat-label">Today's Revenue</div>
+          <div class="stat-bar"><div class="stat-bar-fill gold" style="width:65%"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon green"><i class="fas fa-users"></i></div>
+            <div class="stat-trend up"><i class="fas fa-arrow-up"></i> 5%</div>
+          </div>
+          <div class="stat-value" data-count="18">0</div>
+          <div class="stat-label">Clients Served</div>
+          <div class="stat-bar"><div class="stat-bar-fill green" style="width:72%"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon red"><i class="fas fa-clock"></i></div>
+            <div class="stat-trend down"><i class="fas fa-arrow-down"></i> 2</div>
+          </div>
+          <div class="stat-value" data-count="3">0</div>
+          <div class="stat-label">Pending Confirmation</div>
+          <div class="stat-bar"><div class="stat-bar-fill red" style="width:25%"></div></div>
+        </div>
+      </div>
+
+      <!-- MAIN GRID -->
+      <div class="dashboard-grid">
+
+        <!-- TODAY'S BOOKINGS -->
+        <div class="card full-width">
+          <div class="card-header">
+            <h3>Today's Bookings</h3>
+            <div class="card-actions">
+              <div class="filter-tabs">
+                <button class="ftab active" data-f="all">All</button>
+                <button class="ftab" data-f="pending">Pending</button>
+                <button class="ftab" data-f="confirmed">Confirmed</button>
+                <button class="ftab" data-f="done">Done</button>
+                <button class="ftab" data-f="cancelled">Cancelled</button>
+              </div>
+              <a href="bookings.html" class="link-btn">View All →</a>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="bookingTable">
+              <thead>
+                <tr>
+                  <th>Ref</th>
+                  <th>Client</th>
+                  <th>Service</th>
+                  <th>Barber</th>
+                  <th>Time</th>
+                  <th>Amount</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookingTbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- BARBER PERFORMANCE -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Barber Performance</h3>
+            <span class="card-sub">Today</span>
+          </div>
+          <div class="barber-perf-list" id="barberPerfList"></div>
+        </div>
+
+        <!-- UPCOMING SCHEDULE -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Upcoming Slots</h3>
+            <span class="card-sub">Next 3 hrs</span>
+          </div>
+          <div class="schedule-list" id="scheduleList"></div>
+        </div>
+
+        <!-- REVENUE CHART -->
+        <div class="card full-width">
+          <div class="card-header">
+            <h3>Revenue This Week</h3>
+            <div class="card-actions">
+              <select class="select-sm" id="chartRange">
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+              </select>
+            </div>
+          </div>
+          <div class="chart-area" id="chartArea">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+
+        <!-- SERVICE BREAKDOWN -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Popular Services</h3>
+            <span class="card-sub">This month</span>
+          </div>
+          <div class="service-list" id="serviceBreakdown"></div>
+        </div>
+
+        <!-- QUICK ACTIONS -->
+        <div class="card">
+          <div class="card-header">
+            <h3>Quick Actions</h3>
+          </div>
+          <div class="quick-actions">
+            <button class="qa-btn" onclick="window.location.href='bookings.html?new=1'">
+              <i class="fas fa-calendar-plus"></i>
+              <span>New Booking</span>
+            </button>
+            <button class="qa-btn" onclick="window.location.href='clients.html?new=1'">
+              <i class="fas fa-user-plus"></i>
+              <span>Add Client</span>
+            </button>
+            <button class="qa-btn" onclick="window.location.href='barbers.html'">
+              <i class="fas fa-cut"></i>
+              <span>Manage Barbers</span>
+            </button>
+            <button class="qa-btn" onclick="exportCSV()">
+              <i class="fas fa-file-export"></i>
+              <span>Export Report</span>
+            </button>
+            <button class="qa-btn" onclick="sendReminders()">
+              <i class="fas fa-bell"></i>
+              <span>Send Reminders</span>
+            </button>
+            <button class="qa-btn" onclick="window.location.href='settings.html'">
+              <i class="fas fa-cog"></i>
+              <span>Settings</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- BOOKING DETAIL MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="bookingModal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Booking Details</h3>
+        <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/admin-data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
